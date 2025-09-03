@@ -5,6 +5,7 @@ const connectDB = require('./src/config/database');
 const { port } = require('./src/config');
 const hubspotRoutes = require('./src/routes/hubspotRoutes');
 const ticketRoutes = require('./src/routes/ticketRoutes');
+const employeeRoutes = require('./src/routes/employeeRoutes');
 
 
 const app = express();
@@ -24,6 +25,7 @@ app.get('/', (req, res) => {
 // Routes
 app.use('/api/hubspot', hubspotRoutes);
 app.use("/api/tickets", ticketRoutes);
+app.use("/api/employees", employeeRoutes);
 
 
 const { errorHandler } = require('./src/middlewares/errorHandler');
